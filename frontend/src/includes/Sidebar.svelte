@@ -24,6 +24,7 @@
                     <span class="sidebar-text">Servers</span>
                 </div>
             </Navigate>
+            <!--
             {#if !WHITELABEL_DISABLED}
                 <Navigate to="/whitelabel" styles="sidebar-link">
                     <div class="sidebar-element">
@@ -32,6 +33,7 @@
                     </div>
                 </Navigate>
             {/if}
+            -->
             {#if userData.admin}
                 <Navigate to="/admin/bot-staff" styles="sidebar-link">
                     <div class="sidebar-element">

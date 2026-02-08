@@ -87,6 +87,7 @@ export default {
                 FAVICON: process.env.FAVICON,
                 FAVICON_TYPE: process.env.FAVICON_TYPE,
                 WHITELABEL_DISABLED: process.env.WHITELABEL_DISABLED,
+                REDIRECT_WEBSITE: process.env.REDIRECT_WEBSITE
             })
         }),
 

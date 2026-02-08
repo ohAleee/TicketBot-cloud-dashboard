@@ -1,15 +1,15 @@
 <script>
     import axios from "axios";
-    import { fade } from "svelte/transition";
+    // import { fade } from "svelte/transition";
     import { notifyError, withLoadingScreen } from "../js/util";
     import { setDefaultHeaders } from "../includes/Auth.svelte";
-    import { API_URL } from "../js/constants.js";
+    import {API_URL, REDIRECT_WEBSITE} from "../js/constants.js";
     import Guild from "../components/Guild.svelte";
     import Card from "../components/Card.svelte";
-    import InviteBadge from "../components/InviteBadge.svelte";
-    import Button from "../components/Button.svelte";
+    // import InviteBadge from "../components/InviteBadge.svelte";
+    // import Button from "../components/Button.svelte";
     import NoPermissionModal from "../components/NoPermissionModal.svelte";
-    import { loadingScreen, permissionLevelCache } from "../js/stores";
+    import { loadingScreen/*, permissionLevelCache*/ } from "../js/stores";
 
     setDefaultHeaders();
 
@@ -20,8 +20,9 @@
         : [];
     if (guilds.length > 0) {
         guilds = sortGuilds(guilds);
+        checkGuildsPermission(guilds);
     }
-
+/*
     async function refreshGuilds() {
         await withLoadingScreen(async () => {
             const res = await axios.post(`${API_URL}/user/guilds/reload`);
@@ -40,9 +41,10 @@
 
             guilds = sortGuilds(res.data.guilds);
             window.localStorage.setItem("guilds", JSON.stringify(guilds));
+            checkGuildsPermission(guilds);
         });
     }
-
+*/
     function sortGuilds(guilds) {
         return guilds.sort((a, b) => {
             if (a.permission_level > 0 && b.permission_level <= 0) return -1;
@@ -51,10 +53,17 @@
         });
     }
 
+    function checkGuildsPermission(guilds) {
+        const hasPermission = guilds.some(guild => guild.permission_level > 0);
+        if (!hasPermission) {
+            window.location.href = REDIRECT_WEBSITE;
+        }
+    }
+/*
     function openNoPermissionModal() {
         showNoPermissionModal = true;
     }
-
+*/
     function closeNoPermissionModal() {
         showNoPermissionModal = false;
     }
@@ -72,7 +81,7 @@
                     <h2>Your Servers</h2>
                 </span>
                 <div id="guild-container">
-                    <InviteBadge />
+                    <!-- <InviteBadge /> -->
 
                     {#each guilds as guild}
                         {#if guild.permission_level > 0}
@@ -80,7 +89,7 @@
                         {/if}
                     {/each}
                 </div>
-
+                <!--
                 <br />
                 <span>
                     <h2>Other Servers</h2>
@@ -106,6 +115,7 @@
                         Refresh list
                     </Button>
                 </div>
+                -->
             </div>
         </Card>
     </div>
