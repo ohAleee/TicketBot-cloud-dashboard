@@ -174,12 +174,24 @@ func StartServer(logger *zap.Logger, sm *livechat.SocketManager) *nethttp.Server
 		guildApiNoAuth.GET("/transcripts/:ticketId", rl(middleware.RateLimitTypeGuild, 10, 10*time.Second), api_transcripts.GetTranscriptHandler)
 		guildApiNoAuth.GET("/transcripts/:ticketId/render", rl(middleware.RateLimitTypeGuild, 10, 10*time.Second), api_transcripts.GetTranscriptRenderHandler)
 
+		// Ticket label CRUD (admin-only for mutations, support-level for reads)
+		guildAuthApiSupport.GET("/ticket-labels", api_ticket.ListTicketLabels)
+		guildAuthApiAdmin.POST("/ticket-labels", rl(middleware.RateLimitTypeGuild, 10, time.Minute), api_ticket.CreateTicketLabel)
+		guildAuthApiAdmin.PATCH("/ticket-labels/:labelid", api_ticket.UpdateTicketLabel)
+		guildAuthApiAdmin.DELETE("/ticket-labels/:labelid", api_ticket.DeleteTicketLabel)
+
+		// Ticket label assignments - support level
+		guildAuthApiSupport.GET("/tickets/:ticketId/labels", api_ticket.GetTicketLabels)
+		guildAuthApiSupport.PUT("/tickets/:ticketId/labels", api_ticket.SetTicketLabels)
+		guildAuthApiSupport.DELETE("/tickets/:ticketId/labels/:labelid", api_ticket.RemoveTicketLabel)
+
 		guildAuthApiSupport.GET("/tickets", api_ticket.GetTickets)
 		guildAuthApiSupport.POST("/tickets", api_ticket.GetTickets)
 		guildAuthApiSupport.GET("/tickets/:ticketId", api_ticket.GetTicket)
 		guildAuthApiSupport.POST("/tickets/:ticketId", rl(middleware.RateLimitTypeGuild, 5, time.Second*5), api_ticket.SendMessage)
 		guildAuthApiSupport.POST("/tickets/:ticketId/tag", rl(middleware.RateLimitTypeGuild, 5, time.Second*5), api_ticket.SendTag)
 		guildAuthApiSupport.DELETE("/tickets/:ticketId", api_ticket.CloseTicket)
+		guildAuthApiSupport.PATCH("/tickets/:ticketId/close-reason", api_ticket.UpdateCloseReason)
 
 		// Websockets do not support headers: so we must implement authentication over the WS connection
 		router.GET("/api/:id/tickets/:ticketId/live-chat", livechat.GetLiveChatHandler(sm))
