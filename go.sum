@@ -53,8 +53,8 @@ github.com/TicketsBot-cloud/gdl v0.0.0-20260306134952-cccb0116fef6 h1:ucG0xLPt7x
 github.com/TicketsBot-cloud/gdl v0.0.0-20260306134952-cccb0116fef6/go.mod h1:CdwBR2egPtxUXjD2CgC9ZwfuB8dz9HPePM8nuG6dt7Y=
 github.com/TicketsBot-cloud/logarchiver v0.0.0-20251018211319-7a7df5cacbdc h1:qTLNpCvIqM7UwZ6MdWQ9EztcDsIJfHh+VJdG+ULLEaA=
 github.com/TicketsBot-cloud/logarchiver v0.0.0-20251018211319-7a7df5cacbdc/go.mod h1:pZqkzPNNTqnwKZvCT8kCaTHxrG7HJbxZV83S0p7mmzM=
-github.com/TicketsBot-cloud/worker v0.0.0-20260301212853-f5f9e1ebbfc2 h1:mFNFfu/blbdHDvlG4b/gtEMDx+7RufpTARAOjzwcxEs=
-github.com/TicketsBot-cloud/worker v0.0.0-20260301212853-f5f9e1ebbfc2/go.mod h1:XwwzC6kkENskFCEM+X8F2PSQmMqfqocaFrJBVynFz1I=
+github.com/TicketsBot-cloud/worker v0.0.0-20260423165809-3a23e8fb9fc3 h1:9jqkh8wlH+1RVwDD4SHD2q9JddjzBeaAV1rdCrdxZe0=
+github.com/TicketsBot-cloud/worker v0.0.0-20260423165809-3a23e8fb9fc3/go.mod h1:TDduIAXDo2aweprZVnxxFWieonHRlavYGIe3g2pE8pI=
 github.com/TicketsBot/common v0.0.0-20241117150316-ff54c97b45c1 h1:FqC1KGOsmB+ikvbmDkyNQU6bGUWyfYq8Ip9r4KxTveY=
 github.com/TicketsBot/common v0.0.0-20241117150316-ff54c97b45c1/go.mod h1:N7zwetwx8B3RK/ZajWwMroJSyv2ZJ+bIOZWv/z8DhaM=
 github.com/TicketsBot/ttlcache v1.6.1-0.20200405150101-acc18e37b261 h1:NHD5GB6cjlkpZFjC76Yli2S63/J2nhr8MuE6KlYJpQM=
@@ -622,8 +622,8 @@ golang.org/x/exp v0.0.0-20191227195350-da58074b4299/go.mod h1:2RIsYlXP63K8oxa1u0
 golang.org/x/exp v0.0.0-20200119233911-0405dc783f0a/go.mod h1:2RIsYlXP63K8oxa1u096TMicItID8zy7Y6sNkU49FU4=
 golang.org/x/exp v0.0.0-20200207192155-f17229e696bd/go.mod h1:J/WKrq2StrnmMY6+EHIKF9dgMWnmCNThgcyBT1FY9mM=
 golang.org/x/exp v0.0.0-20200224162631-6cc2880d07d6/go.mod h1:3jZMyOhIsHpP37uCMkUooju7aAi5cS1Q23tOzKc+0MU=
-golang.org/x/exp v0.0.0-20260218203240-3dfff04db8fa h1:Zt3DZoOFFYkKhDT3v7Lm9FDMEV06GpzjG2jrqW+QTE0=
-golang.org/x/exp v0.0.0-20260218203240-3dfff04db8fa/go.mod h1:K79w1Vqn7PoiZn+TkNpx3BUWUQksGO3JcVX6qIjytmA=
+golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f h1:W3F4c+6OLc6H2lb//N1q4WpJkhzJCK5J6kUi1NTVXfM=
+golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f/go.mod h1:J1xhfL/vlindoeF/aINzNzt2Bket5bjo9sdOYzOsU80=
 golang.org/x/image v0.0.0-20190227222117-0694c2d4d067/go.mod h1:kZ7UVZpmo3dzQBMxlp+ypCbDeSB+sBbTgSJuh5dn5js=
 golang.org/x/image v0.0.0-20190802002840-cff245a6509b/go.mod h1:FeLwcggjj3mMvU+oOTbSwawSJRM1uh48EjtB4UJZlP0=
 golang.org/x/lint v0.0.0-20181026193005-c67002cb31c3/go.mod h1:UVdnD1Gm6xHRNCYTkRU2/jEulfH38KcIWyp/GAMgvoE=

@@ -21,7 +21,7 @@ require (
 	github.com/TicketsBot-cloud/database v0.0.0-20260423165031-495c2e8a5bc7
 	github.com/TicketsBot-cloud/gdl v0.0.0-20260306134952-cccb0116fef6
 	github.com/TicketsBot-cloud/logarchiver v0.0.0-20251018211319-7a7df5cacbdc
-	github.com/TicketsBot-cloud/worker v0.0.0-20260301212853-f5f9e1ebbfc2
+	github.com/TicketsBot-cloud/worker v0.0.0-20260423165809-3a23e8fb9fc3
 	github.com/apex/log v1.1.2
 	github.com/caarlos0/env/v11 v11.2.2
 	github.com/getsentry/sentry-go v0.33.0
@@ -133,7 +133,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.17.0 // indirect
 	golang.org/x/crypto v0.50.0 // indirect
-	golang.org/x/exp v0.0.0-20260218203240-3dfff04db8fa // indirect
+	golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f // indirect
 	golang.org/x/net v0.52.0 // indirect
 	golang.org/x/sys v0.43.0 // indirect
 	golang.org/x/term v0.42.0 // indirect
